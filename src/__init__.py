@@ -36,6 +36,11 @@ def create_app(test_config=None):
     app.register_blueprint(auth)
     app.register_blueprint(bookmarks)
 
+    from database import User, Bookmark
+
+    with app.app_context():
+        db.create_all()
+
     Swagger(app,config=swagger_config,template=template)
 
     @app.get('/<shorturl>')
