@@ -1,0 +1,30 @@
+Bookmark Registration
+---
+tags:
+  - Bookmarks
+parameters:
+  - name: body
+    description: The body should contain the bookmark data
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "url"
+        - "body"
+      properties:
+        url:
+          type: "url"
+          example: "abcdef.com"
+        body:
+          type: "body"
+          example: "This is a website"
+  - in: header
+    name: Authorization
+    required: true       
+responses:
+  201:
+    description: When a user successfully logs in
+
+  400:
+    description: Fails to Register due to bad request data

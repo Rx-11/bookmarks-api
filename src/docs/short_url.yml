@@ -1,0 +1,15 @@
+Redirect to a short url
+---
+tags:
+  - Redirect
+parameters:
+  - in: path
+    name: shorturl
+    required: true
+
+responses:
+  302:
+    description: Redirects to the original link
+
+  404:
+    description: Record was not found
